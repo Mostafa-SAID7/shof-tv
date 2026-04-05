@@ -14,7 +14,6 @@ import { FooterComponent } from '../../shared/footer/footer.component';
         navStyle="pill"
         [centerLinks]="navLinks"
         [rightActions]="navActions"
-        [banner]="announcementBanner"
       />
 
       <!-- Hero Section -->

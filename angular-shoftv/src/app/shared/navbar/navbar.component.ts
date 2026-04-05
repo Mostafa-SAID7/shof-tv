@@ -7,28 +7,6 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   template: `
-    <!-- Announcement Banner -->
-    @if (showBanner() && banner) {
-      <div class="bg-primary/10 border-b border-primary/20 py-2 px-4 text-center text-sm relative">
-        <span class="font-bold text-foreground">{{ banner.bold }}</span>
-        <span class="text-secondary-foreground ml-1">{{ banner.text }}</span>
-        @if (banner.link) {
-          <a href="#" class="ml-2 inline-flex items-center gap-1 text-xs font-semibold text-foreground border border-foreground/30 rounded-full px-3 py-0.5 hover:bg-foreground/10 transition-colors">
-            {{ banner.link }}
-          </a>
-        }
-        <button
-          (click)="showBanner.set(false)"
-          class="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
-          aria-label="Close banner"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
-        </button>
-      </div>
-    }
-
     <!-- Main Navbar -->
     <nav class="flex items-center justify-between px-6 lg:px-12 py-4">
       <!-- Logo -->
@@ -164,8 +142,6 @@ export class NavbarComponent {
   @Input() navStyle: 'pill' | 'plain' = 'pill';
   @Input() centerLinks: { label: string; route: string; active?: boolean }[] = [];
   @Input() rightActions: { label: string; route: string; style: 'text' | 'outline' | 'primary' | 'icon' }[] = [];
-  @Input() banner?: { bold: string; text: string; link?: string };
 
-  showBanner = signal(true);
   mobileOpen = signal(false);
 }
