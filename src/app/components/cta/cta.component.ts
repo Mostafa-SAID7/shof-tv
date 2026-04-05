@@ -1,0 +1,50 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-cta',
+  standalone: true,
+  imports: [CommonModule],
+  template: `
+    <section class="py-20 lg:py-28 relative overflow-hidden">
+      <div
+        class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(229,9,20,0.12)_0%,_transparent_60%)]"
+      ></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2
+          class="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-foreground tracking-tight text-balance"
+        >
+          Ready to start watching?
+        </h2>
+        <p
+          class="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto text-pretty"
+        >
+          Join thousands of viewers enjoying premium entertainment. Start your
+          free trial today -- no credit card needed.
+        </p>
+
+        <!-- Email signup -->
+        <div
+          class="mt-8 flex flex-col sm:flex-row items-center gap-3 max-w-md mx-auto"
+        >
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="w-full bg-card border border-border rounded-lg px-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          />
+          <button
+            class="w-full sm:w-auto shrink-0 bg-primary text-primary-foreground font-semibold px-6 py-3.5 rounded-lg text-sm hover:bg-primary/90 transition-colors whitespace-nowrap"
+          >
+            Get Started
+          </button>
+        </div>
+
+        <p class="mt-4 text-xs text-muted-foreground">
+          Free for 7 days, then from $4.99/month. Cancel anytime.
+        </p>
+      </div>
+    </section>
+  `,
+})
+export class CtaComponent {}
