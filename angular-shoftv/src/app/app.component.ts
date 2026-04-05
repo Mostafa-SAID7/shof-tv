@@ -1,42 +1,31 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { HeroComponent } from './components/hero/hero.component';
-import { FeaturesComponent } from './components/features/features.component';
-import { ContentCarouselComponent } from './components/content-carousel/content-carousel.component';
-import { PricingComponent } from './components/pricing/pricing.component';
-import { DevicesComponent } from './components/devices/devices.component';
-import { FaqComponent } from './components/faq/faq.component';
-import { CtaComponent } from './components/cta/cta.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { CookiePreferencesComponent } from './shared/cookie-preferences/cookie-preferences.component';
+import { LiveChatComponent } from './shared/live-chat/live-chat.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
+    RouterOutlet,
     NavbarComponent,
-    HeroComponent,
-    FeaturesComponent,
-    ContentCarouselComponent,
-    PricingComponent,
-    DevicesComponent,
-    FaqComponent,
-    CtaComponent,
     FooterComponent,
+    CookiePreferencesComponent,
+    LiveChatComponent,
   ],
   template: `
     <app-navbar />
-    <main>
-      <app-hero />
-      <app-features />
-      <app-content-carousel />
-      <app-pricing />
-      <app-devices />
-      <app-faq />
-      <app-cta />
+    <main class="min-h-screen">
+      <router-outlet />
     </main>
     <app-footer />
+    <app-cookie-preferences />
+    <app-live-chat />
   `,
+  styles: [],
 })
 export class AppComponent {
-  title = 'ShofTV - Watch What Matters';
+  title = 'ShofTV - The Future of Cinema';
 }
