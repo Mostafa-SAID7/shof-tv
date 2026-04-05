@@ -1,0 +1,84 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from '../../shared/navbar/navbar.component';
+import { FooterComponent } from '../../shared/footer/footer.component';
+
+@Component({
+  selector: 'app-friends',
+  standalone: true,
+  imports: [CommonModule, FormsModule, NavbarComponent, FooterComponent],
+  templateUrl: './friends.component.html',
+})
+export class FriendsComponent {
+  navLinks = [
+    { label: 'Home', route: '/' },
+    { label: 'Movies', route: '/movies' },
+    { label: 'TV Shows', route: '/tv' },
+    { label: 'Friends', route: '/friends', active: true },
+  ];
+
+  navActions = [
+    { label: 'Add Friend', route: '/friends/add', style: 'outline' as const },
+    { label: '', route: '/account', style: 'icon' as const },
+  ];
+
+  friends = [
+    { name: 'Marcus Chen', online: true, watching: 'Watching Dune: Part Two', status: '' },
+    { name: 'Sarah Jenkins', online: true, watching: null, status: 'Online' },
+    { name: 'David Kim', online: false, watching: null, status: 'Last seen 2h ago' },
+    { name: 'Elena Rodriguez', online: false, watching: null, status: 'Last seen yesterday' },
+  ];
+
+  activities: {
+    id: number;
+    user: string;
+    action: string;
+    movie: string;
+    target?: string;
+    time: string;
+    rating?: number;
+    review?: string;
+    description?: string;
+    likes?: number;
+    comments?: number;
+    replyable?: boolean;
+  }[] = [
+    {
+      id: 1,
+      user: 'Marcus Chen',
+      action: 'watched',
+      movie: 'Oppenheimer',
+      time: '2h ago',
+      rating: 5,
+      review: 'Absolutely mind-blowing cinematography. A masterpiece from Nolan.',
+      likes: 12,
+      comments: 3,
+    },
+    {
+      id: 2,
+      user: 'Sarah Jenkins',
+      action: 'added',
+      movie: 'The Matrix',
+      target: 'Watchlist',
+      time: '5h ago',
+      description: 'Planning to rewatch this classic over the weekend!',
+    },
+    {
+      id: 3,
+      user: 'David Kim',
+      action: 'watched',
+      movie: 'Blade Runner 2049',
+      time: '1d ago',
+      rating: 4,
+      review: 'Visually stunning, but pacing felt a bit slow in the middle act.',
+      likes: 4,
+      replyable: true,
+    },
+  ];
+
+  footerLinks = [
+    { label: 'Terms of Service', route: '/terms' },
+    { label: 'Privacy Policy', route: '/privacy' },
+  ];
+}
