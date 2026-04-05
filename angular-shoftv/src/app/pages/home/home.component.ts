@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
-import { FooterComponent } from '../../shared/footer/footer.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, NavbarComponent, FooterComponent],
+  imports: [CommonModule, NavbarComponent],
   template: `
     <div class="min-h-screen bg-background text-foreground">
       <!-- Navbar -->
@@ -205,12 +204,6 @@ import { FooterComponent } from '../../shared/footer/footer.component';
           </button>
         </div>
       </div>
-
-      <!-- Footer -->
-      <app-footer
-        variant="full"
-        [bottomLinks]="footerLinks"
-      />
     </div>
   `,
 })
@@ -322,10 +315,5 @@ export class HomeComponent {
         'Kids screening access',
       ],
     },
-  ];
-
-  footerLinks = [
-    { label: 'Privacy Policy', route: '/privacy' },
-    { label: 'Terms of Service', route: '/terms' },
   ];
 }
