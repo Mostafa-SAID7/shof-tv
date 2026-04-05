@@ -33,7 +33,7 @@ import { RouterModule } from '@angular/router';
     <nav class="flex items-center justify-between px-6 lg:px-12 py-4">
       <!-- Logo -->
       <a routerLink="/" class="flex items-center gap-0 text-2xl font-black tracking-tight">
-        <!-- Logo removed -->
+        <span class="text-primary">SHOF</span><span class="text-foreground">TV</span>
       </a>
 
       <!-- Center Nav Links (Desktop) -->
@@ -158,6 +158,16 @@ import { RouterModule } from '@angular/router';
         }
       </div>
     }
+
+    <!-- Duplicate Header -->
+    <div class="flex items-center justify-between px-6 lg:px-12 py-4 border-b border-border">
+      <a routerLink="/" class="flex items-center gap-0 text-2xl font-black tracking-tight">
+        <span class="text-primary">SHOF</span><span class="text-foreground">TV</span>
+      </a>
+      <div class="text-sm text-muted-foreground">
+        Your Gateway to Entertainment
+      </div>
+    </div>
   `,
 })
 export class NavbarComponent {
